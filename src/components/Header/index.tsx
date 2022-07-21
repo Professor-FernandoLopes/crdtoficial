@@ -8,7 +8,7 @@ import { CardNoise } from '../earn/styled'
 import ClaimModal from '../claim/ClaimModal'
 import { Dots } from '../swap/styleds'
 import HolidayOrnament from './HolidayOrnament'
-//import { ReactComponent as Logo } from '../../assets/svg/logo.svg'
+import { ReactComponent as Logo } from '../../assets/svg/logo.svg'
 import Menu from '../Menu'
 import { NavLink } from 'react-router-dom'
 import NetworkSelector from './NetworkSelector'
@@ -20,10 +20,10 @@ import Web3Status from '../Web3Status'
 import { darken } from 'polished'
 import styled from 'styled-components/macro'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-//import { useDarkModeManager } from 'state/user/hooks'
+import { useDarkModeManager } from 'state/user/hooks'
 import { useNativeCurrencyBalances } from 'state/wallet/hooks'
 import useScrollPosition from '@react-hook/window-scroll'
-//import useTheme from 'hooks/useTheme'
+import useTheme from 'hooks/useTheme'
 import { useUserHasAvailableClaim } from 'state/claim/hooks'
 import { useUserHasSubmittedClaim } from 'state/transactions/hooks'
 
@@ -251,8 +251,8 @@ export default function Header() {
   const { account, chainId } = useActiveWeb3React()
 
   const userEthBalance = useNativeCurrencyBalances(account ? [account] : [])?.[account ?? '']
- // const [darkMode] = useDarkModeManager()
- // const { white, black } = useTheme()
+  const [darkMode] = useDarkModeManager()
+  const { white, black } = useTheme()
 
   const toggleClaimModal = useToggleSelfClaimModal()
 
@@ -274,7 +274,7 @@ export default function Header() {
       <ClaimModal />
       <Title href=".">
         <UniIcon>
-         { /*<Logo fill={darkMode ? white : black} width="24px" height="100%" title="logo" /> */}
+         <Logo fill={darkMode ? white : black} width="64px" height="100%" title="logo" /> 
           <HolidayOrnament />
         </UniIcon>
       </Title>
