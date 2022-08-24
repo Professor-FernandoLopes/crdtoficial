@@ -14,8 +14,18 @@ export const USDC_MAINNET = new Token(
   'USDC',
   'USD//C'
 )
-export const CRDT = new Token( SupportedChainId.MAINNET,'0xDaab5E695bb0E8Ce8384ee56BA38fA8290618e52', 18,'CRDT','Crypto Daily Token')
-export const SCRDT = new Token(SupportedChainId.MAINNET, '0xF5b574aAf22F8bbad4A8f544C6599482f88E8231', 18, 'SCRDT', 'CRDT USD')
+export const CRDT = new Token( SupportedChainId.MAINNET,
+  '0xDaab5E695bb0E8Ce8384ee56BA38fA8290618e52', 
+  18,
+  'CRDT',
+  'Crypto Daily Token')
+
+export const SCRDT = new Token(SupportedChainId.MAINNET, 
+  '0xF5b574aAf22F8bbad4A8f544C6599482f88E8231', 
+  18, 
+  'SCRDT', 
+  'CRDT USD')
+
 export const USDC_ROPSTEN = new Token(
   SupportedChainId.ROPSTEN,
   '0x07865c6e87b9f70255377e024ace6630c1eaa37f',

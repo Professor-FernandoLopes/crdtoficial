@@ -1,22 +1,23 @@
-import { Trans } from '@lingui/macro'
-import { CHAIN_INFO } from 'constants/chainInfo'
+/* eslint-disable simple-import-sort/imports */
+import { ApplicationModal, addPopup } from 'state/application/reducer'
+import { ArrowDownCircle, ChevronDown } from 'react-feather'
 import { CHAIN_IDS_TO_NAMES, SupportedChainId } from 'constants/chains'
+import { ExternalLink, MEDIA_WIDTHS } from 'theme'
+import { useCallback, useEffect, useRef } from 'react'
+import { useModalOpen, useToggleModal } from 'state/application/hooks'
+
+import { CHAIN_INFO } from 'constants/chainInfo'
+import { ParsedQs } from 'qs'
+import { Trans } from '@lingui/macro'
+import { replaceURLParam } from 'utils/routes'
+import styled from 'styled-components/macro'
+import { switchToNetwork } from '../../utils/switchToNetwork'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useAppDispatch } from '../../state/hooks'
+import { useHistory } from 'react-router-dom'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import useParsedQueryString from 'hooks/useParsedQueryString'
 import usePrevious from 'hooks/usePrevious'
-import { ParsedQs } from 'qs'
-import { useCallback, useEffect, useRef } from 'react'
-import { ArrowDownCircle, ChevronDown } from 'react-feather'
-import { useHistory } from 'react-router-dom'
-import { useModalOpen, useToggleModal } from 'state/application/hooks'
-import { addPopup, ApplicationModal } from 'state/application/reducer'
-import styled from 'styled-components/macro'
-import { ExternalLink, MEDIA_WIDTHS } from 'theme'
-import { replaceURLParam } from 'utils/routes'
-
-import { useAppDispatch } from '../../state/hooks'
-import { switchToNetwork } from '../../utils/switchToNetwork'
 
 const ActiveRowLinkList = styled.div`
   display: flex;

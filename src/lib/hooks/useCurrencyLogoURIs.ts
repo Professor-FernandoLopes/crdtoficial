@@ -1,11 +1,12 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable simple-import-sort/imports */
 import { Currency } from '@uniswap/sdk-core'
-import { SupportedChainId } from 'constants/chains'
-import useHttpLocations from 'hooks/useHttpLocations'
-import { useMemo } from 'react'
-import { WrappedTokenInfo } from 'state/lists/wrappedTokenInfo'
-
 import EthereumLogo from '../../assets/images/ethereum-logo.png'
 import MaticLogo from '../../assets/svg/matic-token-icon.svg'
+import { SupportedChainId } from 'constants/chains'
+import { WrappedTokenInfo } from 'state/lists/wrappedTokenInfo'
+import useHttpLocations from 'hooks/useHttpLocations'
+import { useMemo } from 'react'
 
 type Network = 'ethereum' | 'arbitrum' | 'optimism'
 
@@ -36,7 +37,8 @@ function getTokenLogoURI(address: string, chainId: SupportedChainId = SupportedC
   const networkName = chainIdToNetworkName(chainId)
   const networksWithUrls = [SupportedChainId.ARBITRUM_ONE, SupportedChainId.MAINNET, SupportedChainId.OPTIMISM]
   if (networksWithUrls.includes(chainId)) {
-    return `https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
+    return `https://github.com/Professor-FernandoLopes/assets/tree/master/blockchains/${networkName}/assets/${address}/logo.png`
+  
   }
 }
 

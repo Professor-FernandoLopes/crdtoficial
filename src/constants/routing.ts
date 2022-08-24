@@ -109,6 +109,7 @@ export const CUSTOM_BASES: { [chainId: number]: { [tokenAddress: string]: Token[
 
 /**
  * Shows up in the currency select for swap and add liquidity
+ * Aqui são as que aparem na
  */
 export const COMMON_BASES: ChainCurrencyList = {
   [SupportedChainId.MAINNET]: [
@@ -181,8 +182,8 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
     USDC_MAINNET,
     USDT,
     WBTC,
-    CRDT,
-    SCRDT
+   // CRDT,
+   // SCRDT
   ],
 }
 export const PINNED_PAIRS: { readonly [chainId: number]: [Token, Token][] } = {
