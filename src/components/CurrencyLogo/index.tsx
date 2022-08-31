@@ -1,9 +1,9 @@
+/* eslint-disable simple-import-sort/imports */
 import { Currency } from '@uniswap/sdk-core'
-import useCurrencyLogoURIs from 'lib/hooks/useCurrencyLogoURIs'
+import Logo from '../Logo'
 import React from 'react'
 import styled from 'styled-components/macro'
-
-import Logo from '../Logo'
+import useCurrencyLogoURIs from 'lib/hooks/useCurrencyLogoURIs'
 
 const StyledLogo = styled(Logo)<{ size: string; native: boolean }>`
   width: ${({ size }) => size};

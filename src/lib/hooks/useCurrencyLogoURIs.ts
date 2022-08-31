@@ -1,3 +1,5 @@
+/* eslint-disable simple-import-sort/imports */
+import CrdtLogo from '../../assets/images/logo.png'
 /* eslint-disable prettier/prettier */
 /* eslint-disable simple-import-sort/imports */
 import { Currency } from '@uniswap/sdk-core'
@@ -37,9 +39,10 @@ function getTokenLogoURI(address: string, chainId: SupportedChainId = SupportedC
   const networkName = chainIdToNetworkName(chainId)
   const networksWithUrls = [SupportedChainId.ARBITRUM_ONE, SupportedChainId.MAINNET, SupportedChainId.OPTIMISM]
   if (networksWithUrls.includes(chainId)) {
-    return `https://github.com/Professor-FernandoLopes/assets/tree/master/blockchains/${networkName}/assets/${address}/logo.png`
+    return CrdtLogo
   
   }
+  
 }
 
 export default function useCurrencyLogoURIs(currency?: Currency | null): string[] {
